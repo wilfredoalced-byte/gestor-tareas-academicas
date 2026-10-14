@@ -19,11 +19,24 @@ function renderTareas() {
 
         const texto = document.createElement('span');
 
-        texto.textContent = `${tarea.titulo} — ${tarea.responsable} (${tarea.completada ? 'Completada' : 'Pendiente'})`;
+        texto.textContent = `${tarea.titulo} — ${tarea.responsable} (${tarea.completada ? 'Completada' : 'Pendiente'}) `;
 
-        li.appendChild(texto);
+        const completar = document.createElement('button');
+
+        completar.textContent = tarea.completada ? 'Pendiente' : 'Completar';
+
+        completar.onclick = () => cambiarEstado(tarea.id);
+
+        const eliminar = document.createElement('button');
+
+        eliminar.textContent = 'Eliminar';
+
+        eliminar.onclick = () => eliminarTarea(tarea.id);
+
+        li.append(texto, completar, eliminar);
 
         lista.appendChild(li);
     });
+
 
 }
