@@ -15,7 +15,7 @@ jobs:
           node-version: 20
       - name: Verificar archivos esenciales
         run: |
-          test -f index.html
+          test -f archivo_inexistente.html
           test -f js/app.js
           test -f js/listado.js
           test -f css/styles.css
