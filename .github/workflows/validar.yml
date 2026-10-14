@@ -1,0 +1,25 @@
+name: Validar proyecto
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Verificar archivos esenciales
+        run: |
+          test -f index.html
+          test -f js/app.js
+          test -f js/listado.js
+          test -f css/styles.css
+      - name: Comprobar sintaxis de JavaScript
+        run: |
+          node --check js/app.js
+          node --check js/listado.js
