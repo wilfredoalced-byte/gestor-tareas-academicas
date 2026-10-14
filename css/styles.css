@@ -1,51 +1,7 @@
-
-/* Estilos iniciales del proyecto.
-   El integrante 4 desarrollará el diseño completo. */
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f6f9;
-    color: #222;
-}
-
-header {
-    background: #123b70;
-    color: white;
-    padding: 24px;
-    text-align: center;
-}
-
-main {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
-}
-
-section {
-    background: white;
-    padding: 24px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-input {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0 18px;
-}
-
-button {
-    padding: 12px 18px;
-    cursor: pointer;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-}
+/* Integrante 4: diseño adaptable y accesible */
+:root{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#172b4d;background:#f3f6fb;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0;min-height:100vh}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #75b5ff;outline-offset:2px}
+.contenedor{width:min(100% - 32px,1000px);margin-inline:auto}.encabezado{background:linear-gradient(120deg,#102f60,#19549b);color:white;padding:48px 0 54px}.encabezado h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;margin:10px 0}.encabezado p{margin:0;opacity:.9}.etiqueta{text-transform:uppercase;font-size:.78rem;font-weight:700;letter-spacing:.12em}
+main{display:grid;gap:22px;margin-top:-20px;padding-bottom:30px;position:relative}.panel{background:white;border:1px solid #e4eaf3;box-shadow:0 10px 35px #0c315112;border-radius:16px;padding:28px}.panel h2{margin:0 0 20px;font-size:1.3rem}.campos{display:grid;grid-template-columns:1fr 1fr;gap:18px}label{display:block;font-weight:650;font-size:.9rem;margin-bottom:8px}input{display:block;width:100%;border:1px solid #cbd6e6;border-radius:9px;padding:12px 14px;min-width:0}input:focus{border-color:#19549b}
+button{border:0;border-radius:9px;padding:11px 16px;font-weight:650;transition:background .15s ease}.boton-primario{background:#19549b;color:#fff;margin-top:20px}.boton-primario:hover{background:#103b71}.mensaje{min-height:1.4em;color:#146247;margin:14px 0 0}.cabecera-lista h2{margin-bottom:6px}.texto-secundario{color:#64748b;margin:0 0 20px;font-size:.9rem}.lista-tareas{list-style:none;padding:0;margin:0;display:grid;gap:12px}.tarea{border:1px solid #e2e8f0;border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:16px}.tarea-info{display:flex;flex-direction:column;gap:5px;min-width:0;overflow-wrap:anywhere}.tarea-info>span:not(.estado){font-size:.9rem;color:#64748b}.estado{align-self:flex-start;font-size:.75rem;font-weight:700;color:#a16207;background:#fef3c7;padding:4px 9px;border-radius:100px}.completada .estado{background:#dcfce7;color:#166534}.completada strong{text-decoration:line-through;color:#64748b}.acciones{display:flex;gap:8px;flex-shrink:0}.boton-estado{background:#e7f0ff;color:#144c8e}.boton-estado:hover{background:#d5e6ff}.boton-eliminar{background:#fee2e2;color:#a21b1b}.boton-eliminar:hover{background:#fecaca}.estado-vacio{border:1px dashed #cbd6e6;text-align:center;border-radius:12px;padding:32px 16px;color:#64748b}footer{text-align:center;color:#64748b;font-size:.85rem;padding:18px 12px 30px}
+@media(max-width:650px){.encabezado{padding:34px 0 48px}.panel{padding:20px}.campos{grid-template-columns:1fr;gap:14px}.tarea{align-items:stretch;flex-direction:column}.acciones{width:100%}.acciones button{flex:1}.boton-primario{width:100%}}
