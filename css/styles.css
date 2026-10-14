@@ -1,7 +1,4 @@
 
-/* Estilos iniciales del proyecto.
-   El integrante 4 desarrollará el diseño completo. */
-
 * {
     box-sizing: border-box;
 }
@@ -9,8 +6,8 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: #f4f6f9;
-    color: #222;
+    background: #f4f7fb;
+    color: #18283b;
 }
 
 header {
@@ -21,9 +18,12 @@ header {
 }
 
 main {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
+    max-width: 760px;
+    margin: 48px auto;
+    padding: 28px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px #0001;
 }
 
 section {
