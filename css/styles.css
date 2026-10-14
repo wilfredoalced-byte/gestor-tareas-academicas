@@ -1,0 +1,51 @@
+
+/* Estilos iniciales del proyecto.
+   El integrante 4 desarrollará el diseño completo. */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f9;
+    color: #222;
+}
+
+header {
+    background: #123b70;
+    color: white;
+    padding: 24px;
+    text-align: center;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+section {
+    background: white;
+    padding: 24px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 18px;
+}
+
+button {
+    padding: 12px 18px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
