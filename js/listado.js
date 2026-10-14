@@ -13,4 +13,17 @@ function renderTareas() {
 
         return;
     }
+
+    tareas.forEach(tarea => {
+        const li = document.createElement('li');
+
+        const texto = document.createElement('span');
+
+        texto.textContent = `${tarea.titulo} — ${tarea.responsable} (${tarea.completada ? 'Completada' : 'Pendiente'})`;
+
+        li.appendChild(texto);
+
+        lista.appendChild(li);
+    });
+
 }
