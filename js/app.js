@@ -1,49 +1,39 @@
-
-// Proyecto: Gestor de Tareas Académicas
-// SENATI - Seminario Complementario II
-
-// Almacenamiento temporal de las tareas
-const tareas = [];
-
-// Integrante 1: Registro de tareas
-// Aquí se implementará el formulario.
-
+// Integrante 1: registro y almacenamiento local de tareas.
+const CLAVE_TAREAS = "senati-gestor-tareas-v1";
+let tareas = [];
+try {
+  const guardadas = JSON.parse(localStorage.getItem(CLAVE_TAREAS) || "[]");
+  if (Array.isArray(guardadas)) {
+    tareas = guardadas.filter(t => t && typeof t.id === "string" && typeof t.titulo === "string" && typeof t.responsable === "string" && typeof t.completada === "boolean");
+  }
+} catch (error) {
+  console.warn("No se pudieron recuperar las tareas guardadas.", error);
+}
+function guardarTareas() {
+  try { localStorage.setItem(CLAVE_TAREAS, JSON.stringify(tareas)); }
+  catch (error) { console.warn("No se pudieron guardar las tareas.", error); }
+}
+function mostrarMensaje(texto) {
+  document.getElementById("mensaje").textContent = texto;
+}
 const formulario = document.getElementById("formulario-tarea");
 const tituloInput = document.getElementById("titulo");
 const responsableInput = document.getElementById("responsable");
-
 formulario.addEventListener("submit", function (evento) {
-    evento.preventDefault();
-
-    const titulo = tituloInput.value.trim();
-    const responsable = responsableInput.value.trim();
-
-    if (titulo === "" || responsable === "") {
-        alert("Completa todos los campos.");
-        return;
-    }
-
-    const nuevaTarea = {
-        id: Date.now(),
-        titulo: titulo,
-        responsable: responsable,
-        completada: false
-    };
-
-    tareas.push(nuevaTarea);
-
-    console.log("Tarea registrada:", nuevaTarea);
-    alert("Tarea registrada correctamente");
-
-    formulario.reset();
+  evento.preventDefault();
+  const titulo = tituloInput.value.trim();
+  const responsable = responsableInput.value.trim();
+  if (!titulo || !responsable) {
+    mostrarMensaje("Completa ambos campos para registrar una tarea.");
+    return;
+  }
+  tareas.push({
+    id: typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + "-" + Math.random().toString(36).slice(2),
+    titulo, responsable, completada: false
+  });
+  guardarTareas();
+  renderTareas();
+  formulario.reset();
+  tituloInput.focus();
+  mostrarMensaje("Tarea registrada correctamente.");
 });
-
-
-// Integrante 2: Listado de tareas
-// Aquí se implementará la visualización.
-
-// Integrante 3: Estado y eliminación
-// Aquí se implementarán completar y eliminar.
-
-// Integrante 4: Diseño y pruebas
-// Aquí se realizarán mejoras visuales y validaciones.
