@@ -1,42 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Tareas Académicas | SENATI</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b70">
+  <meta name="description" content="Organiza y gestiona tareas académicas en SENATI.">
+  <title>Gestor de Tareas Académicas | SENATI</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Gestor de Tareas Académicas</h1>
-        <p>Proyecto colaborativo - Seminario Complementario II</p>
-    </header>
-
-    <main>
-        <section id="registro">
-            <h2>Registrar tarea</h2>
-            <form id="formulario-tarea">
-                <label for="titulo">Título de la tarea</label>
-                <input type="text" id="titulo" required>
-
-                <label for="responsable">Responsable</label>
-                <input type="text" id="responsable" required>
-
-                <button type="submit">Agregar tarea</button>
-            </form>
-        </section>
-
-        <section id="listado">
-            <h2>Lista de tareas</h2>
-            <div id="lista-tareas"></div>
-        </section>
-    </main>
-
-    <footer>
-        <p>SENATI - Trabajo colaborativo con Git y GitHub</p>
-    </footer>
-
-    <script src="js/app.js"></script>
+  <header class="encabezado">
+    <div class="contenedor">
+      <p class="etiqueta">SENATI · Seminario Complementario II</p>
+      <h1>Gestor de Tareas Académicas</h1>
+      <p>Organiza tus pendientes y lleva el control de tus actividades.</p>
+    </div>
+  </header>
+  <main class="contenedor">
+    <section class="panel" aria-labelledby="titulo-registro">
+      <h2 id="titulo-registro">Registrar nueva tarea</h2>
+      <form id="formulario-tarea">
+        <div class="campos">
+          <div><label for="titulo">Título de la tarea</label><input type="text" id="titulo" maxlength="120" placeholder="Ej. Entregar informe final" required></div>
+          <div><label for="responsable">Responsable</label><input type="text" id="responsable" maxlength="80" placeholder="Nombre del integrante" required></div>
+        </div>
+        <button type="submit" class="boton-primario">Agregar tarea</button>
+      </form>
+      <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+    </section>
+    <section class="panel" aria-labelledby="titulo-listado">
+      <div class="cabecera-lista"><div><h2 id="titulo-listado">Lista de tareas</h2><p id="resumen" class="texto-secundario"></p></div></div>
+      <ul id="lista-tareas" class="lista-tareas" aria-live="polite"></ul>
+    </section>
+  </main>
+  <footer>Proyecto colaborativo con Git y GitHub · SENATI</footer>
+  <script src="js/app.js"></script>
+  <script src="js/listado.js"></script>
+  <script src="js/estado.js"></script>
+  <script>renderTareas();</script>
 </body>
 </html>
